@@ -1,3 +1,11 @@
-<p>
-  heroi-detalhe works!
-</p>
+<div *ngIf="heroi;else stmt">
+	<h2>{{heroi.name}}</h2>
+	<h3>Descrição : {{heroi.caracteristica}}</h3>
+	<label>Troque o nome :
+		<input [(ngModel)]="heroi.name" placeholder="name" />
+	</label>
+</div>
+<ng-template #stmt>
+
+	<h2>Selecione um super heroi acima</h2>
+</ng-template>

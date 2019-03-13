@@ -12,14 +12,4 @@
 		<span class="badge">{{heroi.id}}</span>{{heroi.name}}
 	</li>
 </ul>
-<div *ngIf="heroiSelecionado;else stmt">
-	<h2>{{heroiSelecionado.name}}</h2>
-
-	<label>Troque o nome :
-		<input [(ngModel)]="heroiSelecionado.name" placeholder="name" />
-	</label>
-</div>
-<ng-template #stmt>
-
-	<h2>Selecione um super acima</h2>
-</ng-template>
+<app-heroi-detalhe [heroi]="heroiSelecionado"></app-heroi-detalhe>
