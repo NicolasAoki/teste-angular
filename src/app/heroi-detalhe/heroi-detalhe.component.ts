@@ -6,6 +6,7 @@ import { Heroes } from '../hero/heroi'
   styleUrls: ['./heroi-detalhe.component.css']
 })
 export class HeroiDetalheComponent implements OnInit {
+	
 	@Input() heroi: Heroes;
   constructor() { }
 
