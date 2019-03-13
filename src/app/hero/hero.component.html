@@ -1,7 +1,25 @@
 <div>
-	<label>Nome :
-		<input [(ngModel)]="hero.name" placeholder="name" />
-	</label>
+
 </div>
 <h1>{{hero.name | uppercase}}</h1>
 <h1>é o numero {{hero.id}}</h1>
+
+<h2>Todos herois recebidos</h2>
+<ul class="heroes">
+	<li *ngFor="let heroi of todosHerois" 
+		[class.selected]="heroi===heroiSelecionado"
+		(click)="OnSelecionarHeroi(heroi)">
+		<span class="badge">{{heroi.id}}</span>{{heroi.name}}
+	</li>
+</ul>
+<div *ngIf="heroiSelecionado;else stmt">
+	<h2>{{heroiSelecionado.name}}</h2>
+
+	<label>Troque o nome :
+		<input [(ngModel)]="heroiSelecionado.name" placeholder="name" />
+	</label>
+</div>
+<ng-template #stmt>
+
+	<h2>Selecione um super acima</h2>
+</ng-template>
