@@ -6,10 +6,12 @@
 
 <h2>Todos herois recebidos</h2>
 <ul class="heroes">
-	<li *ngFor="let heroi of todosHerois" 
+	<li *ngFor="let heroi of heroes" 
 		[class.selected]="heroi===heroiSelecionado"
 		(click)="OnSelecionarHeroi(heroi)">
 		<span class="badge">{{heroi.id}}</span>{{heroi.name}}
 	</li>
 </ul>
+<!-- Manda como parametro o obj do tipo heroi
+para o componente heroi-detalhe -->
 <app-heroi-detalhe [heroi]="heroiSelecionado"></app-heroi-detalhe>
