@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Heroes } from './hero/heroi';
 import { HEROES } from './hero/herois-recebidos';
+import { MensagemServService } from './mensagem-serv.service';
 
 // fica esperando o retorno de um dado
 //depois de retornado devolve uma promise
@@ -19,12 +20,11 @@ export class HeroiService {
 
   heroes: Heroes[];
 
-  constructor() {
-  	
-  }
+  constructor(private mensagemServ: MensagemServService) { }
 
   getHeroes(): Observable<Heroes[]>{
   	//retorna um array dos herois
+    this.mensagemServ.add('Servico Hero: Adquiriu heroi');
     return of(HEROES);
 
     // normalmente deve-se chamar a requisicao de obj por:
