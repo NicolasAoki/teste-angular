@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeroComponent } from './hero/hero.component';
 import { HeroiDetalheComponent } from './heroi-detalhe/heroi-detalhe.component';
 import { MensagemComponent } from './mensagem/mensagem.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MensagemComponent } from './mensagem/mensagem.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

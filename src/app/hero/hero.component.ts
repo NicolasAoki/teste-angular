@@ -3,6 +3,7 @@ import { Heroes } from './heroi';
 import { HEROES } from './herois-recebidos';
 import { HeroiService } from '../heroi.service';
 
+
 @Component({
   selector: 'app-hero',
   templateUrl: './hero.component.html',

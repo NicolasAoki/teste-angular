@@ -1,11 +1,14 @@
 <!--The content below is only a placeholder and can be replaced.-->
+
 <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
   </h1>
   <h1>{{title}}</h1>
-
+  <a routerLink ="/herois">Confira herois disponiveis</a>
 </div>
 
-<app-hero></app-hero>
+<!-- Router outlet serve como um controle de componente
+	que somente serao vistos pela identificao da URL -->
+<router-outlet></router-outlet>
 <app-mensagem></app-mensagem>

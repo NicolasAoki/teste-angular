@@ -1,9 +1,10 @@
 <div *ngIf="mensagemServ.mensagem.length">
 	<button class="clear"
-			(click)="mensagemServ.clear">Apagar
+			(click)="mensagemServ.clear()">Apagar
 	</button>
-	<button class="add"
-			(click)="mensagemServ.add('asd')">adionar
+	<button 
+			(click)="mensagemServ.add('teste')">Add
 	</button>
+
 	<div *ngFor="let message of mensagemServ.mensagem">{{message}}</div>
 </div>
