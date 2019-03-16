@@ -30,4 +30,9 @@ export class HeroiService {
     // normalmente deve-se chamar a requisicao de obj por:
     // HttpClient.get<Hero[]>() 
   }
+  getHero(id:number): Observable<Heroes>{
+    this.mensagemServ.add(`HeroiServico: realizado com suceso HERO id=${id}`);
+    console.log('chegou aqui');
+    return of(HEROES.find(hero=>hero.id===id));
+  }
 }

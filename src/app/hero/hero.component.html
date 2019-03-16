@@ -5,13 +5,14 @@
 <h1>é o numero {{hero.id}}</h1>
 
 <h2>Todos herois recebidos</h2>
+
 <ul class="heroes">
-	<li *ngFor="let heroi of heroes" 
-		[class.selected]="heroi===heroiSelecionado"
-		(click)="OnSelecionarHeroi(heroi)">
-		<span class="badge">{{heroi.id}}</span>{{heroi.name}}
+	<li *ngFor="let heroi of heroes">
+		<a class="selected" routerLink="/detail/{{heroi.id}}">
+			<span class="badge">{{heroi.id}}</span>{{heroi.name}}
+		</a>
 	</li>
 </ul>
 <!-- Manda como parametro o obj do tipo heroi
 para o componente heroi-detalhe -->
-<app-heroi-detalhe [heroi]="heroiSelecionado"></app-heroi-detalhe>
+<!-- <app-heroi-detalhe [heroi]="heroiSelecionado"></app-heroi-detalhe> -->

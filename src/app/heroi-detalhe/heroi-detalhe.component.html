@@ -1,11 +1,12 @@
-<div *ngIf="heroi;else stmt">
-	<h2>{{heroi.name}}</h2>
-	<h3>Descrição : {{heroi.caracteristica}}</h3>
+<div *ngIf="hero;else stmt">
+	<h2>{{hero.name}}</h2>
+	<h3>Descrição : {{hero.caracteristica}}</h3>
 	<label>Troque o nome :
-		<input [(ngModel)]="heroi.name" placeholder="name" />
+		<input [(ngModel)]="hero.name" placeholder="name" />
 	</label>
 </div>
+ <button (click)="goBack()">go back</button>
 <ng-template #stmt>
 
-	<h2>Selecione um super heroi acima</h2>
+	<h2>Selecione um super heroi no menu</h2>
 </ng-template>

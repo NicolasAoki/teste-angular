@@ -1,5 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Heroes } from '../hero/heroi'
+import { Heroes } from '../hero/heroi';
+
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import { HeroiService } from '../heroi.service';
+
 @Component({
   selector: 'app-heroi-detalhe',
   templateUrl: './heroi-detalhe.component.html',
@@ -7,10 +12,30 @@ import { Heroes } from '../hero/heroi'
 })
 export class HeroiDetalheComponent implements OnInit {
 	
-	@Input() heroi: Heroes;
-  constructor() { }
+  hero: Heroes;
 
-  ngOnInit() {
+  constructor(
+  	private route: ActivatedRoute,
+  	private heroService: HeroiService,
+  	private location: Location
+  	) { }
+
+  ngOnInit() :void{
+  	this.getHero();
+  }
+  getHero():void{
+  	//@route.snapshot retira uma snapshot da url
+  	//assim que o componente for criado
+  	//@paramMap um parametro da URL
+  	//@ '+' converte de string para number
+  	const id = +this.route.snapshot.paramMap.get('id');
+  	console.log('chegou aqui1');
+  	this.heroService.getHero(id)
+  	.subscribe(hero => this.hero = hero);
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }

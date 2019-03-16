@@ -5,9 +5,11 @@
     Welcome to {{ title }}!
   </h1>
   <h1>{{title}}</h1>
-  <a routerLink ="/herois">Confira herois disponiveis</a>
+  <nav>
+  	<a routerLink="/dashboard">Dashboard</a>
+	<a routerLink ="/herois">Herois</a>
+  </nav>
 </div>
-
 <!-- Router outlet serve como um controle de componente
 	que somente serao vistos pela identificao da URL -->
 <router-outlet></router-outlet>
