@@ -29,7 +29,6 @@ export class HeroiDetalheComponent implements OnInit {
   	//@paramMap um parametro da URL
   	//@ '+' converte de string para number
   	const id = +this.route.snapshot.paramMap.get('id');
-  	console.log('chegou aqui1');
   	this.heroService.getHero(id)
   	.subscribe(hero => this.hero = hero);
   }
